@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+management:
+  context-path: /admin
+
+spring:
+  application.name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/prathap2k/config-server-repo.git
+          basedir: target/config
+
+---
+spring:
+  profiles: cloud
